@@ -6,10 +6,7 @@ A humane shell.
 
 Mshell is a general purpose interactive shell. (Mshell is a provisional name.)
 
-The primary motivation for this shell is that while text UIs are helpful, shell programming 
-can be a pain. Wouldn't it be nice to have a higher-level (typed) language to use when 
-working with the shell? An additional motivation is that many text UIs are arcane. Let's  
-explore the development of a truly humane text UI.
+The primary motivation for this shell is that while text UIs are helpful, shell programming can be a pain. Wouldn't it be nice to have a higher-level (typed) language to use when working with the shell? An additional motivation is that many text UIs are arcane. Let's explore the development of a truly humane text UI.
 
 ## Release Notes
 
@@ -25,25 +22,22 @@ TODO Implement the user guide.
 
 # Design
 
-Initially just a collection of scripts and shell function, but intended to grow into a 
-Java program, potentially having a daemon component and also potentially having a 
-lightweight native front end.
+Started initially as just a collection of scripts and shell function, and now growing into a Java program, potentially having a daemon component and also potentially having a lightweight native front end.
 
 ## V1 Domain model
 
 Command group
-+ Name -- globally unique
++ Name -- _globally unique_
 
 Command
-+ Name -- globally unique
++ Name -- _globally unique_
 + execute(Arguments)
 + HelpContent
 
 CommandRegistry
 + Commands
 
-Interpreter
--- Takes a string of text and executes commands accordingly
+Interpreter -- _Takes a string of text and executes commands accordingly_
 
 CLI -- UI for interpreter
 
@@ -51,13 +45,11 @@ CLI -- UI for interpreter
 
 ### Modules
 
-Core -- Uses spring-shell to boot a basic shell
-Extensions -- Includes commands from unpublished stuff
--- Jot, NextToDo, CLI, Miscellany
--- Babe (build/clean), Scripting (mp)
+Core -- _Uses spring-shell to boot a basic shell_
 
-Some shell scripts divided between these two projects too. Over time, the extensions will 
-be published...
+Extensions -- _Includes commands from unpublished stuff including Jot, NextToDo, Babe (build/clean), and Scripting (mp)_
+
+Some shell scripts are divided between these two modules too. Over time, the extensions will be published...
 
 # TODO 
 

@@ -53,6 +53,11 @@ Some shell scripts are divided between these two modules too. Over time, the ext
 
 # TODO 
 
+Add a general means for running background tasks. Should have a nice UI and allow task 
+  authors to write single-threaded tasks that can be invoked in the background, perhaps with a 
+  command siilar to foo & in bash.
+Add simple calculator functions, perhaps also integrate another shell like R
+-- This could make that doable: https://rforge.net/JRI/
 Provide better deployment instructions.
 All documentation should be made available online in the application(s).
 Publish more extensions (see Design for details)

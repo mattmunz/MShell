@@ -5,6 +5,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/CommandLineInterface"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Guava"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Miscellany"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/spring-shell"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/spring-shell"/>
 	<classpathentry kind="output" path="build/eclipse"/>
 </classpath>

@@ -1,38 +1,33 @@
 package mattmunz.mshell;
 
-import static com.google.common.collect.Maps.newTreeMap; 
+import static com.google.common.collect.Maps.newHashMap; 
 
-import java.util.Comparator;
 import java.util.Map;
 
 import mattmunz.util.MapHelper;
 
+// TODO Rename
 public class AliasResolverBuilder<V> 
 {
-  private final Comparator<String> aliasComparator = new Comparator<String>()
-  {
-    @Override
-    public int compare(String leftAlias, String rightAlias)
-    {
-      return leftAlias.toUpperCase().compareTo(rightAlias.toUpperCase());
-    }
-  };
-
   private final MapHelper mapHelper = new MapHelper();
   
-  private final Map<String, V> valuesByAlias = newTreeMap(aliasComparator);
+  private final Map<String, V> valuesByAlias = newHashMap();
+
+  private final String valueTypeDescription;
+  
+  public AliasResolverBuilder(String valueTypeDescription) 
+  {
+    this.valueTypeDescription = valueTypeDescription; 
+  }
 
   public void put(V value, String... aliases) 
   {
     mapHelper.put(value, valuesByAlias, aliases);
   }
-
-  public Map<String, V> build() 
-  { 
-    // TODO Would be great to have a utility for making these defensive copies...
-    Map<String, V> valuesByAliasCopy = newTreeMap(aliasComparator);
-    valuesByAliasCopy.putAll(valuesByAlias);
-    
-    return valuesByAliasCopy; 
+  
+  // TODO Rename
+  public AliasedObjectCollection<V> buildAOC()
+  {
+    return new AliasedObjectCollection<V>(valuesByAlias, valueTypeDescription);
   }
 }
